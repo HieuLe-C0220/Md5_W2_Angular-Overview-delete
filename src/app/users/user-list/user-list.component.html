@@ -16,6 +16,7 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
+        <th scope="col">Khoá học</th>
         <th scope="col">Handle</th>
       </tr>
       </thead>
@@ -24,6 +25,7 @@
         <th scope="row">{{i+1}}</th>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
+        <td><app-group></app-group></td>
         <td>
           <button class="btn btn-danger" (click)="deleteById( user.id )">Delete</button>
         </td>

@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { UserListComponent } from './users/user-list/user-list.component';
 import { MenuComponent } from './core/menu/menu.component';
 import { InputSearchComponent } from './core/input-search/input-search.component';
+import { GroupComponent } from './users/group/group.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserListComponent,
     MenuComponent,
-    InputSearchComponent
+    InputSearchComponent,
+    GroupComponent
   ],
   imports: [
     BrowserModule,
