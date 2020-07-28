@@ -50,8 +50,7 @@ export class UserListComponent implements OnInit {
     this.users = this.setUserList();
   }
   search(event) {
-    let keyword = event.target.value;
-    this.users = (keyword) ? this.filterByKeyword(keyword) : this.setUserList();
+    this.users = (event) ? this.filterByKeyword(event) : this.setUserList();
   }
 
   filterByKeyword(keyword) {

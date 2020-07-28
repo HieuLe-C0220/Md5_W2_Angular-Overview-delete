@@ -5,7 +5,7 @@
         {{title_page}}
       </div>
       <div class="col-md-8">
-        <input type="text" (keyup)="search($event)"/>
+        <app-input-search (keyword)="search($event)"></app-input-search>
       </div>
     </div>
   </div>
