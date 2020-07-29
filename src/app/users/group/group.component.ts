@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {GroupStudent} from '../igroup';
+import {GroupService} from '../group.service';
 
 @Component({
   selector: 'app-group',
@@ -7,20 +8,11 @@ import {GroupStudent} from '../igroup';
   styleUrls: ['./group.component.css']
 })
 export class GroupComponent implements OnInit {
-  groups: GroupStudent[] = [
-    {
-      id: 1,
-      name: 'Java'
-    },
-    {
-      id: 2,
-      name: 'PHP'
-    }
-  ];
-  constructor() { }
+
+  constructor(private groupService: GroupService) { }
 
   ngOnInit(): void {
   }
-
+  groups: GroupStudent[] = this.groupService.getGroupList();
 }
 

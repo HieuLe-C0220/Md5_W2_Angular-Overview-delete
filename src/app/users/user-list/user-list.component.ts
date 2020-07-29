@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {IUser} from '../iuser';
+import {GroupStudent} from '../igroup';
+import {UserService} from '../user.service';
+import {GroupService} from '../group.service';
 
 @Component({
   selector: 'app-user-list',
@@ -8,56 +11,33 @@ import {IUser} from '../iuser';
 })
 export class UserListComponent implements OnInit {
   // tslint:disable-next-line:variable-name
-  title_page = 'Users';
+  title_page = 'Users_list';
   users: IUser[] = [];
-  setUserList(): IUser[] {
-    const users = [
-      {
-        id: 1,
-        name: 'Hieu',
-        email: 'hieu@gmail.com'
-      },
-      {
-        id: 2,
-        name: 'Trung',
-        email: 'trung@gmail.com'
-      },
-      {
-        id: 3,
-        name: 'Dung',
-        email: 'dung@gmail.com'
-      },
-      {
-        id: 4,
-        name: 'Thien',
-        email: 'thien@gmail.com'
-      },
-      {
-        id: 5,
-        name: 'Huan',
-        email: 'huan@gmail.com'
-      }
-    ];
-    return users;
-  }
   // tạo 1 list ảo
   // userFilter = [];
+  groups: GroupStudent[];
+  constructor(private userService: UserService,
+              private groupService: GroupService) {
 
-  constructor() { }
+  }
 
   ngOnInit(): void {
     // this.userFilter = this.users;
-    this.users = this.setUserList();
-  }
-  search(event) {
-    this.users = (event) ? this.filterByKeyword(event) : this.setUserList();
+    this.users = this.userService.getUserList();
+    this.groups = this.groupService.getGroupList();
   }
 
   filterByKeyword(keyword) {
-    return this.users.filter(user => {
+    return this.userService.getUserList().filter(user => {
       return user.name.indexOf(keyword) !== -1;
     });
   }
+
+  search(event) {
+    this.users = (event) ? this.filterByKeyword(event) : this.userService.getUserList();
+  }
+
+
   // deleteById(id: number) {
   //   this.users.splice(id , id);
   // }

@@ -10,6 +10,7 @@
     </div>
   </div>
   <div class="card-body">
+    <button class="btn btn-primary" routerLink="add">Create</button>
     <table class="table">
       <thead class="thread-light">
       <tr>
@@ -25,9 +26,12 @@
         <th scope="row">{{i+1}}</th>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
-        <td><app-group></app-group></td>
+        <ng-container *ngFor="let group of groups">
+          <td *ngIf="group.id == user.group_id">{{group.name}}</td>
+        </ng-container>
         <td>
           <button class="btn btn-danger" (click)="deleteById( user.id )">Delete</button>
+<!--          <button class="btn btn-success" [routerLink]="'edit/'+user.id">Edit</button>-->
         </td>
       </tr>
 
