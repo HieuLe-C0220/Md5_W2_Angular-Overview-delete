@@ -27,8 +27,6 @@ export class UserListComponent implements OnInit {
     // this.userFilter = this.users;
     this.users = this.userService.getUserList();
     this.groups = this.groupService.getGroupList();
-    console.log(this.users);
-    console.log(this.groups);
   }
 
   filterByKeyword(keyword) {
@@ -40,7 +38,6 @@ export class UserListComponent implements OnInit {
   search(event) {
     this.users = (event) ? this.filterByKeyword(event) : this.userService.getUserList();
   }
-
 
   // deleteById(id: number) {
   //   this.users.splice(id , id);

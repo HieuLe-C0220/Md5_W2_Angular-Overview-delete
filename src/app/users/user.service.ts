@@ -42,8 +42,23 @@ export class UserService {
     return this.users;
   }
 
-  add(user: IUser): IUser {
+  getUserById(id:number):IUser{
+    for(let i = 0;i< this.users.length;i++){
+      if(this.users[i].id == id){
+        return this.users[i]
+      }
+    }
+  }
+
+  editUserById(user:IUser){
+    for(let i = 0; i < this.users.length; i++){
+      if(this.users[i].id == user.id){
+        this.users[i] = user;
+      }
+    }
+  }
+
+  add(user: IUser): void {
     this.users.push(user);
-    return user;
   }
 }

@@ -36,7 +36,7 @@ export class AddUserComponent implements OnInit {
   createNewUser() {
     let newUser = this.newUserForm.value;
     this.userService.add(newUser);
-    this.router.navigate(['users']);
+    this.router.navigate(['user']);
     // console.log(this.userService.getUserList()); //dung de kiem tra xem da add duoc chua
   }
 }

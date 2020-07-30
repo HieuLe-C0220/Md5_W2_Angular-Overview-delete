@@ -9,6 +9,7 @@ import { InputSearchComponent } from './core/input-search/input-search.component
 import { GroupComponent } from './users/group/group.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { EditUserComponent } from './users/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MenuComponent,
     InputSearchComponent,
     GroupComponent,
-    AddUserComponent
+    AddUserComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,
