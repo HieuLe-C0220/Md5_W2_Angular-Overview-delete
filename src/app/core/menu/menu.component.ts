@@ -7,7 +7,7 @@ import {IUser} from '../../users/iuser';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
-  user: IUser
+  user: IUser;
   constructor() { }
 
   ngOnInit(): void {
