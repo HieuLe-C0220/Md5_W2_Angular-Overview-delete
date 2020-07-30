@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GroupStudent} from '../igroup';
+import {IGroup} from '../igroup';
 import {GroupService} from '../group.service';
 
 @Component({
@@ -13,6 +13,6 @@ export class GroupComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  groups: GroupStudent[] = this.groupService.getGroupList();
+  groupList: IGroup[] = this.groupService.getGroupList();
 }
 

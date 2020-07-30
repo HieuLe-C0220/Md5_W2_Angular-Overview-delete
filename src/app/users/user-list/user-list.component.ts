@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {IUser} from '../iuser';
-import {GroupStudent} from '../igroup';
+import {IGroup} from '../igroup';
 import {UserService} from '../user.service';
 import {GroupService} from '../group.service';
 
@@ -10,12 +10,14 @@ import {GroupService} from '../group.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  // tslint:disable-next-line:variable-name
+
   title_page = 'Users_list';
+
   users: IUser[] = [];
+
   // tạo 1 list ảo
   // userFilter = [];
-  groups: GroupStudent[];
+  groups: IGroup[];
   constructor(private userService: UserService,
               private groupService: GroupService) {
 
@@ -25,6 +27,8 @@ export class UserListComponent implements OnInit {
     // this.userFilter = this.users;
     this.users = this.userService.getUserList();
     this.groups = this.groupService.getGroupList();
+    console.log(this.users);
+    console.log(this.groups);
   }
 
   filterByKeyword(keyword) {

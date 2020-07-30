@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
-import {GroupStudent} from './igroup';
+import {IGroup} from './igroup';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GroupService {
-  groups: GroupStudent[] = [
+  groups: IGroup[] = [
     {
       id: 1,
       name: 'Java'

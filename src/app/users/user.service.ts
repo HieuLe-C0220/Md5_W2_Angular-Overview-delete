@@ -38,7 +38,7 @@ export class UserService {
     }
   ];
   constructor() { }
-  public getUserList(): IUser[] {
+  public getUserList() {
     return this.users;
   }
 

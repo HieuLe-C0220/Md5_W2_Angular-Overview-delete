@@ -32,7 +32,7 @@
   <div class="form-group">
     <label for="group_id_label">Group</label>
     <select formControlName="group_id" class="form-control" name="" id="group_id_label">
-      <ng-container *ngFor="let group of groupList">
+      <ng-container *ngFor="let group of groups">
         <option value="{{group.id}}">{{group.name}}</option>
 
       </ng-container>
