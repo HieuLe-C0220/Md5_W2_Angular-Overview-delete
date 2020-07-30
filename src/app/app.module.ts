@@ -10,6 +10,7 @@ import { GroupComponent } from './users/group/group.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { EditUserComponent } from './users/edit-user/edit-user.component';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EditUserComponent } from './users/edit-user/edit-user.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

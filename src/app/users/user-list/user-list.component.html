@@ -22,20 +22,29 @@
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let user of users; let i = index">
-        <th scope="row">{{i+1}}</th>
+      <tr *ngFor="let user of users |paginate:{
+        id:'user-list',
+        itemsPerPage: 4,
+        currentPage: page
+      };let idx = index ">
+        <th scope="row">{{idx + 1}}</th>
         <td>{{ user.name }}</td>
         <td>{{ user.email }}</td>
         <ng-container *ngFor="let group of groups">
           <td *ngIf="group.id == user.group_id">{{group.name}}</td>
         </ng-container>
         <td>
-          <button class="btn btn-danger" (click)="deleteById( user.id )">Delete</button>
+          <button class="btn btn-danger mr-2" (click)="deleteById( user.id )">Delete</button>
           <button class="btn btn-success" [routerLink]="'edit/'+user.id">Edit</button>
         </td>
       </tr>
 
       </tbody>
     </table>
+    <div class="row ">
+      <div class="mx-auto">
+        <pagination-controls  id="user-list" maxSize="5" directionLinks="true" (pageChange)="page = $event"></pagination-controls>
+      </div>
+    </div>
   </div>
 </div>

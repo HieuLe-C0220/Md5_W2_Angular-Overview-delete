@@ -14,13 +14,12 @@ export class UserListComponent implements OnInit {
   title_page = 'Users_list';
 
   users: IUser[] = [];
-
+  page: number = 1;
   // tạo 1 list ảo
   // userFilter = [];
   groups: IGroup[];
   constructor(private userService: UserService,
               private groupService: GroupService) {
-
   }
 
   ngOnInit(): void {

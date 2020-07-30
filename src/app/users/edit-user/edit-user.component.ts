@@ -13,7 +13,6 @@ import {IGroup} from '../igroup';
 })
 export class EditUserComponent implements OnInit {
   title_page = 'Edit user info';
-
   editUserForm: FormGroup;
   editUserId: string;
   editUser: IUser;

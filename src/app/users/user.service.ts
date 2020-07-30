@@ -35,6 +35,36 @@ export class UserService {
       name: 'Huan',
       email: 'huan@gmail.com',
       group_id: 1
+    },
+    {
+      id: 6,
+      name: 'Dang',
+      email: 'dang@gmail.com',
+      group_id: 2
+    },
+    {
+      id: 7,
+      name: 'Vinh',
+      email: 'vinh@gmail.com',
+      group_id: 1
+    },
+    {
+      id: 8,
+      name: 'Phong',
+      email: 'phong@gmail.com',
+      group_id: 1
+    },
+    {
+      id: 9,
+      name: 'Thuy',
+      email: 'thuy@gmail.com',
+      group_id: 2
+    },
+    {
+      id: 10,
+      name: 'Doan',
+      email: 'doan@gmail.com',
+      group_id: 1
     }
   ];
   constructor() { }
@@ -42,15 +72,15 @@ export class UserService {
     return this.users;
   }
 
-  getUserById(id:number):IUser{
-    for(let i = 0;i< this.users.length;i++){
+  getUserById(id:number): IUser{
+    for (let i = 0; i< this.users.length; i++) {
       if(this.users[i].id == id){
         return this.users[i]
       }
     }
   }
 
-  editUserById(user:IUser){
+  editUserById(user:IUser) {
     for(let i = 0; i < this.users.length; i++){
       if(this.users[i].id == user.id){
         this.users[i] = user;
